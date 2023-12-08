@@ -1,4 +1,6 @@
-const apiKey = '9daf4b6a558f18f1ab42fc0b6013a742';
+// загрузка страницы дождаться
+document.addEventListener('DOMContentLoaded', ()=> {
+    const apiKey = '9daf4b6a558f18f1ab42fc0b6013a742';
 const form = document.querySelector('#form');
 const input = document.querySelector('.search');
 const temp = document.querySelector('.temp');
@@ -90,8 +92,10 @@ async function showWeather (event) {
         case 'overcast clouds':
             backgroundFullInfo.style.backgroundImage = "url('/jpg/overcastclouds.jpeg')";
             break;
+        default:
+            backgroundFullInfo.style.backgroundImage = "url('/jpg/lightrain.jpeg')";
     }  
-    }).catch(err => console.log(`У вас появилась ошибка: ${err}`))
+    }).catch(err => alert(`У вас появилась ошибка: ${err}`))
 }
 
 
@@ -110,3 +114,4 @@ function CheckDay(day){
 for(i = 0; i<5; i++){
         document.getElementById("day" + (i+1)).innerHTML = weekday[CheckDay(i)];
 }
+})
