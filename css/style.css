@@ -1,0 +1,242 @@
+/* style main start  ----------------*/
+.main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-areas: 
+            'container_fullInformation header_search'
+            'container_fullInformation map'
+            'container_fullInformation map'
+            'container_fullInformation map';   
+}
+/* style main end  ----------------*/
+
+/* style header start -------------*/
+
+.header_search {
+    height: 100%;
+    background: linear-gradient(45deg, #88c1bd, #1F83A3);
+    color: black;
+    text-align: center;
+    grid-area: header_search;
+    box-sizing: border-box;
+}
+
+.form {
+    margin-top: 10px;
+}
+
+.search {
+    background: none;
+    border: 0px;
+    border-bottom: 1px #ccc solid;
+    padding: 1em 1em 0.5em 0;
+    width: 60%;
+    color: rgba(0, 0, 0, 0.5);;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search::placeholder {
+    color: #ccc;
+}
+
+.search_button {
+    position: absolute;
+    top: 0;
+    right: 1;
+    margin-top: 24px;
+    border: none;
+    outline: none;
+    background: #88C198;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.4s;
+    font-size: 24px
+}
+
+/* style header end----------------------- */
+
+/* style map start-------------------------*/
+#map {
+    grid-area: map;
+}
+/* style map end---------------------------*/
+
+/* style container start-------------------*/
+.container_infoCity {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2em 3em 4em 3em;
+}
+
+.container_infoCity-show {
+    display: block;
+    animation: showBlock 2.5s linear forwards;
+}
+
+@keyframes showBlock {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.container_infoCity > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city_name,
+.temp,
+.weather_icon {
+    margin: 0 1em;
+}
+
+.city_name {
+    margin: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+
+.temp {
+    font-size: 7em;
+    margin: 0;
+}
+
+.weather_icon img {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.icon {
+    border: 0px ;
+}
+/* style container end-----------------*/
+
+/* style container_fullInformation start---------------*/
+
+#container_fullInformation {
+    display: flex;
+    grid-area: container_fullInformation;
+    min-height: 100vh;
+    background-image: url(/jpg/lightrain.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.2s ease-out;
+}
+
+.weather_container{
+    display: none;
+     width: 39%;
+     position: absolute;
+     top: 40%;
+     left: 25%;
+     margin-right: -50%;
+     transform: translate(-50%, -50%);
+ } 
+
+ .weather_container-show {
+    display: block;
+    animation: showBlock1 2.5s linear forwards;
+}
+
+@keyframes showBlock1 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+#icons_container{
+    display: inline-flex;
+    text-align: center;
+}
+
+.icons{
+    margin-right: 40px;
+    font-family: fantasy;
+}
+
+.icons p {
+    text-align: center;
+    font-size: larger;
+}
+
+/* style container_fullInformation end-----------------*/
+
+/* Adaptive layout */
+
+@media screen and (max-width: 1024px) {
+    .container_infoCity {
+    left: 0%;
+    font-size: x-small;
+}
+#icons_container{
+    display: list-item;
+    text-align: center;
+}
+.weather_container {
+    top: 55%;
+    left: 25%;
+}
+}
+
+@media screen and (max-width: 500px) {
+html {
+    font-size: 12px;
+}
+.main {
+    height: 10vh;
+display: block;   
+} 
+.container_infoCity {
+    font-size: 6px;
+    justify-content: center;
+    top: 25%;
+}
+.container_infoCity-show {
+    display: flex;
+    left: 26%;
+}
+.weather_container {
+    top: 74%;
+    left: 26%;
+}
+#map {
+    height: 200px;
+
+}
+.search_button {
+    font-size: 18px;
+    margin-top: 20px;
+}
+#container_fullInformation {
+    min-height: 69vh;
+}
+}
+
+@media screen and (max-height: 300px) {
+.main {
+    min-height: 40em;
+}
+.container_infoCity {
+    display: inline;
+    width: 0%;
+    font-size: x-small;
+    justify-content: center;
+}
+
+
+}

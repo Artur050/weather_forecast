@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="main">
+        <header class="header_search">
+            <form class="form" id="form">
+                <input class="search" type="text" placeholder="Введите название города">
+                <button  type="submit" class="search_button">&#128269;</button>
+            </form>
+        </header>
+        <div id="map"></div>
+        <div class="container_infoCity">
+            <div>
+                <h1 class="temp"></h1>
+                <h1 class="city_name"></h1>
+                <div class="weather_icon">
+                    <img id="icon" class="icon"  height="50">
+                </div>
+            </div>
+        </div>
+        <div id="container_fullInformation"> 
+            <div class = "weather_container">
+                <div id="icons_container">    
+                    <div class = "icons">
+                        <p class="weather" id="day1"></p>
+                        <div class="image"><img class="imgClass" id="img1"></div>
+                        <p class="valuesTem" id="day1Tem"></p>
+                    </div>
+                    <div class = "icons">
+                        <p class="weather" id="day2"></p>
+                        <div class="image"><img class="imgClass" id="img2"></div>
+                        <p class="valuesTem" id="day2Tem"></p>
+                    </div>
+                    <div class = "icons">
+                        <p class="weather" id="day3"></p>
+                        <div class="image"><img  class="imgClass" id="img3"></div>
+                        <p class="valuesTem" id="day3Tem"></p>
+                    </div>
+                    <div class = "icons">
+                        <p class="weather" id="day4"></p>
+                        <div class="image"><img  class="imgClass" id="img4"></div>
+                        <p class="valuesTem" id="day4Tem"></p>
+                    </div>
+                    <div class = "icons">
+                        <p class="weather" id="day5"></p>
+                        <div class="image"><img  class="imgClass" id="img5"></div>
+                        <p class="valuesTem" id="day5Tem"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
